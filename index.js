@@ -67,7 +67,10 @@ function guess() {
         error.innerHTML = "Input must be a number"
 	} else if (userInput.length !== difficulty) {
         error.innerHTML = `Input must be ${difficulty} characters`
-    } else {
+    } else if ([... new Set(userInput.split(""))].join("").length !== userInput.length) {
+		document.getElementById("form-errors").innerHTML = "Cannot have duplicate values";
+		return;
+	} else {
 		error.innerHTML = "";
 
 		if (win) {
