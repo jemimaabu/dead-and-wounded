@@ -1,7 +1,7 @@
 var win = false;
 var difficulty = +document.getElementById("difficulty-level").value;
+document.getElementById("user-input").maxLength = difficulty;
 let compInput=[];
-
 
 // Generate array of 4 unique random numbers
 function generateCompInput() {
@@ -19,8 +19,6 @@ document.getElementById("difficulty-level").onchange = function(){
 	difficulty = +document.getElementById("difficulty-level").value;
 	generateCompInput();
 	document.getElementById("user-input").maxLength = difficulty;
-	console.log(difficulty);
-	console.log(compInput);
 };
 
 function deadAndWounded(compInput, userInput) {
@@ -60,7 +58,6 @@ function addResultRow(guessText, resultText) {
 }
 
 function guess() {
-	console.log(difficulty);
 	const userInput = document.getElementById("user-input").value;
 	const error = document.getElementById("form-errors");
 
