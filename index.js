@@ -58,8 +58,8 @@ function addResultRow(guessText, resultText) {
 }
 
 function guess() {
-	const userInput = document.getElementById("user-input").value;
-	const error = document.getElementById("form-errors");
+	let userInput = document.getElementById("user-input").value;
+	let error = document.getElementById("form-errors");
 
     if (userInput.length === 0 ) {
         error.innerHTML = "Input cannot be empty"
@@ -72,10 +72,10 @@ function guess() {
 		return;
 	} else {
 		error.innerHTML = "";
-
 		if (win) {
 			return;
 		} else {
+			document.getElementById("user-input").value="";
 			addResultRow(userInput, deadAndWounded(compInput, userInput))
 		}
     }
