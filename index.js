@@ -80,3 +80,11 @@ function guess() {
 		}
     }
 }
+
+document.getElementById("user-input").onkeypress = function(event){
+    if (event.which == 13 || event.keyCode == 13) {
+        guess();
+        return false;
+    }
+    return true;
+};
