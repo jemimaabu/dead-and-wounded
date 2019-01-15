@@ -18,7 +18,7 @@ Basically, if you're a beginner, think of it as your introduction to open source
 And if you've been open sourcing for a while, here's another contribution to add to your belt.
 
 ## Contributing
-Checkout [CONTRIBUTING.md](CONTRIBUTING.md) for details on creating pull requests and solving issues and all that jazz.
+Checkout [CONTRIBUTING.md](.github/CONTRIBUTING.md) for details on creating pull requests and solving issues and all that jazz.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](.github/LICENSE) file for details
