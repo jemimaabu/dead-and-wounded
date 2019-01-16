@@ -12,6 +12,11 @@ So if the computer generates a random number 4123 and you guess 2167, it returns
 2. Guess a random number the same length as the difficulty level chosen
 3. Try to figure out the computer's number
 
+# Rules
+- The length of the number must correspond to the level chosen i.e. 1234 for Easy, 12345 for Medium, 123456 for Hard
+- The input must consist only of numbers (no letters or special characters)
+- The number should not have duplicate values (no repeated numbers e.g. 0012, 1656 etc)
+
 # Open Source
 This project is open to contributions from the public. 
 Basically, if you're a beginner, think of it as your introduction to open source. 
