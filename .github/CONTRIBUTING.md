@@ -1,5 +1,5 @@
 # Contributing
-The purpose of this project is to be an intro into open source for any beginners so you can go through the project site here [Dead and Wounded](http://jemimaabu.github.io/dead-and-wounded.html) and then choose something to work on.
+The purpose of this project is to be an intro into open source for any beginners so you can go through the project site here [Dead and Wounded](http://jemimaabu.github.io/dead-and-wounded) and then choose something to work on.
 
 I made the project as bare as possible so there should be many things to choose from (styling a button or optimizing the logic or whatever).
 
