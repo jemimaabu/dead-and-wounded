@@ -1,0 +1,33 @@
+body {
+	background-color: PaleGreen;
+	text-align: center;
+}
+
+button {
+	background-color: #008CBA;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+input[type=text] {
+	width: 150px;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: none;
+	background-color: #3CBC8D;
+	color: white;
+}
+
+select {
+	width: 100px;
+	height: 40px;
+	background-color: DodgerBlue;
+}
