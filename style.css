@@ -1,5 +1,16 @@
 body {
 	background-color: PaleGreen;
+}
+
+#title {
+	text-align: center;
+}
+
+#title h2 {
+	text-transform: capitalize;
+}
+
+#game-form {
 	text-align: center;
 }
 
