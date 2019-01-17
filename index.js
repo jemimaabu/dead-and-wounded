@@ -75,8 +75,7 @@ function guess() {
 		if (win) {
 			return;
 		} else {
-			document.getElementById("user-input").value="";
-			addResultRow(userInput, deadAndWounded(compInput, userInput))
+			addResultRow(userInput, deadAndWounded(compInput, userInput));
 		}
     }
 }
