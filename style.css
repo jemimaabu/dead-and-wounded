@@ -18,6 +18,24 @@ body {
 	text-align: center;
 }
 
+#form-errors {
+    height: 1em;
+    opacity:0;
+}
+
+#form-errors.error {
+    color: red;
+    opacity: 1;
+    -webkit-transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+    transition: opacity .5s ease-out;
+}
+
+#form-errors.error~input[type=text] {
+    border: 1px solid red;
+}
+
 button {
 	background-color: #008CBA;
 	padding: 15px 32px;

@@ -61,6 +61,8 @@ function guess() {
 	let userInput = document.getElementById("user-input").value;
 	let error = document.getElementById("form-errors");
 
+	error.classList.add("error");
+
     if (userInput.length === 0 ) {
         error.innerHTML = "Input cannot be empty"
 	} else if (isNaN(userInput)) {
@@ -71,6 +73,7 @@ function guess() {
 		document.getElementById("form-errors").innerHTML = "Cannot have duplicate values";
 		return;
 	} else {
+		error.classList.remove("error")
 		error.innerHTML = "";
 		if (win) {
 			return;
