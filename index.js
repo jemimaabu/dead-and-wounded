@@ -1,6 +1,7 @@
 var win = false;
 var difficulty = +document.getElementById("difficulty-level").value;
-document.getElementById("user-input").maxLength = difficulty;
+var input = document.getElementById("user-input");
+input.maxLength = difficulty;
 let compInput = [];
 
 // Generate array of 4 unique random numbers
@@ -17,8 +18,9 @@ generateCompInput();
 //Get difficulty level
 document.getElementById("difficulty-level").onchange = function () {
 	difficulty = +document.getElementById("difficulty-level").value;
-	generateCompInput();
-	document.getElementById("user-input").maxLength = difficulty;
+	document.getElementById("result-body").innerHTML = "";
+	input.maxLength = difficulty;
+	input.value = "";
 };
 
 function deadAndWounded(compInput, userInput) {
