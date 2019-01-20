@@ -1,5 +1,6 @@
 body {
 	background-color: PaleGreen;
+	font-family: sans-serif;
 }
 
 #title {
@@ -14,17 +15,82 @@ body {
 	text-align: center;
 }
 
-button {
+#guessButton {
 	background-color: #008CBA;
-	padding: 15px 32px;
+	padding: 13px 30px;
 	text-align: center;
-	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
-	margin: 4px 2px;
 	color: white;
 	border: none;
 	cursor: pointer;
+}
+
+
+/* For the button that toggles the instructions */
+
+#instructionsButton {
+	background-color: yellow;
+	padding: 10px 15px;
+	text-align: center;
+	display: inline-block;
+	font-size: 16px;
+	color: black;
+	border: none;
+	cursor: pointer;
+}
+
+
+/* For the three main columns */
+
+.collumn {
+	float: left;
+	width: 33%;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#table-wrapper {
+	display: block;
+	overflow-y: auto;
+	height: 500px;
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table {
+	background-color: Aquamarine;
+	border-collapse: collapse;
+	table-layout: fixed;
+	width: 100%;
+}
+
+td,
+th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 5px;
+}
+
+th {
+	background-color: #4CAF50;
+	color: white;
+}
+
+tr:nth-child(even) {
+	background-color: DarkTurquoise;
+}
+
+div {
+	margin-top: 1%;
 }
 
 input[type=text] {
