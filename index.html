@@ -20,15 +20,22 @@
             <li>Guess a random number the same length as the difficulty level chosen</li>
             <li> Try to figure out the computer's number</li>
          </ol>
+         <h3>Rules</h3>
+         <ul>
+            <li>The length of the number must correspond to the level chosen i.e. 1234 for Easy, 12345 for Medium, 123456 for Hard</li>
+            <li>The input must consist only of numbers (no letters or special characters)</li>
+            <li>The number should not have duplicate characters (no repeated numbers e.g. 0012, 1656 etc)</li>
+         </ul>
          <p>
             <b>Explanation</b>: If your guess has the right number in the right position, it registers as +1Dead. If it has the right number but in the wrong position, it registers as +1Wounded.<br>
-            So if the computer generates a random number 4123 and you guess 2167, it returns 1 dead, 1 wounded.
+            So if the computer generates a random number 6247 and you guess 1234, it returns 1 dead ('2' in the right position), 1 wounded ('4' in the wrong position).
          </p>
       </div>
       <div id="game-form">
          <div id="form-errors"></div>
          <div class="row">
             <div class="collumn">
+               <label id="difficulty-label" for="difficulty-level">Difficulty:</label>
                <select name="difficulty-level" id="difficulty-level">
                   <option value="4" selected>Easy</option>
                   <option value="5">Medium</option>
