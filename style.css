@@ -14,17 +14,52 @@ body {
 	text-align: center;
 }
 
-button {
+#guessButton {
 	background-color: #008CBA;
-	padding: 15px 32px;
+	padding: 13px 30px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
-	margin: 4px 2px;
 	color: white;
 	border: none;
 	cursor: pointer;
+}
+
+
+/* For the button that toggles the instructions */
+
+#instructionsButton {
+	background-color: #f2ff00;
+	padding: 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	color: black;
+	border: none;
+	cursor: pointer;
+}
+
+
+/* For the three main columns */
+
+.collumn {
+	float: left;
+	width: 33%;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+div {
+	margin-top: 1%;
 }
 
 input[type=text] {
