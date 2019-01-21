@@ -98,3 +98,35 @@ select {
 	height: 40px;
 	background-color: DodgerBlue;
 }
+
+#table-wrapper {
+	display: block;
+	overflow-y: auto;
+	height: 500px;
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table {
+	background-color: Aquamarine;
+	border-collapse: collapse;
+	table-layout: fixed;
+	width: 100%;
+}
+
+td,
+th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 5px;
+}
+
+th {
+	background-color: #4CAF50;
+	color: white;
+}
+
+tr:nth-child(even) {
+	background-color: DarkTurquoise;
+}
