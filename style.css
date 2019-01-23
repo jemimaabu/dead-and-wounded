@@ -103,7 +103,8 @@ select {
 	display: block;
 	overflow-y: auto;
 	height: 500px;
-	width: 700px;
+	width: 100%;
+	max-width: 700px;
 	margin-left: auto;
 	margin-right: auto;
 }
