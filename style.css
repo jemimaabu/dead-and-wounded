@@ -117,12 +117,13 @@ select {
 
 #table-wrapper {
 	display: block;
-	overflow-y: auto;
 	height: 500px;
 	width: 100%;
+	overflow-y: auto;
 	max-width: 700px;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 0;
 }
 
 table {
@@ -137,6 +138,8 @@ th {
 	border: 1px solid #dddddd;
 	text-align: left;
 	padding: 5px;
+	height: 29px;
+	width: 339px;
 }
 
 th {
@@ -146,4 +149,14 @@ th {
 
 tr:nth-child(even) {
 	background-color: DarkTurquoise;
+}
+thead{
+
+	top:0;
+}
+.table2{
+	width: 339px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
 }
