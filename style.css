@@ -1,19 +1,35 @@
 body {
-	background-color: PaleGreen;
+    background-color: PaleGreen;
 }
 
 #title {
-	text-align: center;
+    text-align: center;
 }
 
-#title h2 {
-	text-transform: capitalize;
+#title{
+    text-transform: capitalize;
+    position:relative;
 }
+#head h2{
+    position:fixed;
+    text-align: center;
+    margin: 0;
+    right: 0;
+    left: 0;
+    top:0;
+    z-index: 999;
+    border: 2px solid black;
+    color: white;
+    background-color: black;
 
+}
+#title p{
+    margin-top:70px;
+    overflow: hidden;
+}
 #instructions h3 {
 	margin-bottom: 0;
 }
-
 #game-form {
 	text-align: center;
 }
