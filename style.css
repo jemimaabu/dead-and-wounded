@@ -1,5 +1,5 @@
 body {
-    background-color: PaleGreen;
+	background-color: PaleGreen;
 }
 
 #title {
@@ -7,9 +7,14 @@ body {
 	text-align: center;
 }
 
+#title h2 {
+	text-transform: capitalize;
+}
+
 #instructions h3 {
 	margin-bottom: 0;
 }
+
 #game-form {
 	text-align: center;
 }
@@ -41,7 +46,8 @@ body {
 	font-size: 16px;
 	color: white;
 	border: none;
-	cursor: pointer;
+    cursor: pointer;
+    
 }
 
 /* For the button that toggles the instructions */
@@ -62,11 +68,33 @@ body {
 /* For the three main columns */
 
 .collumn {
-	float: left;
-	width: 33%;
+    display: flex;
+    width: 33%;
+   justify-content: center;
+   margin-left: auto;
+	margin-right: auto;
+    
 }
+.row{
+    justify-content: space-around;
+    padding-left: 30px;
+}
+@media only screen and (min-width: 768px)
 
-
+{
+    .media
+    {
+        display: flex;
+        grid-template-columns: repeat(2fr);
+        justify-items: space-around;
+        align-items: baseline;
+    }
+    .guessButton
+    {
+        padding: 10px 15px;
+    }
+}
+    
 /* Clear floats after the columns */
 
 .row:after {
@@ -97,13 +125,12 @@ select {
 
 #table-wrapper {
 	display: block;
+	overflow-y: auto;
 	height: 500px;
 	width: 100%;
-	overflow-y: auto;
 	max-width: 700px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 0;
 }
 
 table {
@@ -118,8 +145,6 @@ th {
 	border: 1px solid #dddddd;
 	text-align: left;
 	padding: 5px;
-	height: 29px;
-	width: 339px;
 }
 
 th {
@@ -130,13 +155,4 @@ th {
 tr:nth-child(even) {
 	background-color: DarkTurquoise;
 }
-thead{
 
-	top:0;
-}
-.table2{
-	width: 339px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 0;
-}
