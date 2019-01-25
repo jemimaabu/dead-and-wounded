@@ -3,6 +3,7 @@ body {
 }
 
 #title {
+	text-transform: capitalize;
 	text-align: center;
 }
 
