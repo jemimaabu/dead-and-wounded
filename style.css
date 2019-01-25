@@ -1,27 +1,45 @@
 body {
 	background-color: PaleGreen;
+	padding: 1em 7em;
 }
 
 #title {
 	text-transform: capitalize;
 	text-align: center;
+	max-width: 700px;
+	width: 100%;
+	margin: 0 auto;
 }
 
 #title h2 {
 	text-transform: capitalize;
 }
 
+.instructions-container {
+	max-width: 700px;
+	width: 100%;
+	margin: 1em auto;
+}
+
 #instructions h3 {
 	margin-bottom: 0;
 }
 
-#game-form {
-	text-align: center;
+.media {
+	max-width: 700px;
+    width: 100%;
+    margin: 1em auto;
 }
 
 #form-errors {
-    height: 1em;
-    opacity:0;
+	opacity:0;
+	padding: 0.5em 0; 
+	transition: .5s;
+}
+
+#form-errors:empty {
+	padding: 0;
+	transition: .5s;
 }
 
 #form-errors.error {
@@ -37,84 +55,47 @@ body {
     border: 1px solid red;
 }
 
-#guessButton {
+.row {
+	margin: 1em 0;
+}
+
+#guessButton {    
 	background-color: #008CBA;
-	padding: 13px 30px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	color: white;
-	border: none;
-    cursor: pointer;
-    
+    padding: 1em;
+    color: white;
+    border: none;
+	cursor: pointer;  
+    min-width: 25%;
 }
 
 /* For the button that toggles the instructions */
-
 #instructionsButton {
 	background-color: #f2ff00;
-	padding: 10px 15px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
+	padding: 1em;
 	color: black;
 	border: none;
-	cursor: pointer;
 }
-
 
 /* For the three main columns */
-
 .collumn {
-    display: flex;
-    width: 33%;
-   justify-content: center;
-   margin-left: auto;
-	margin-right: auto;
-    
+    width: 50%;
+    float: left; 
 }
-.row{
-    justify-content: space-around;
-    padding-left: 30px;
-}
-@media only screen and (min-width: 768px)
-
-{
-    .media
-    {
-        display: flex;
-        grid-template-columns: repeat(2fr);
-        justify-items: space-around;
-        align-items: baseline;
-    }
-    .guessButton
-    {
-        padding: 10px 15px;
-    }
-}
-    
+ 
 /* Clear floats after the columns */
-
 .row:after {
 	content: "";
 	display: table;
 	clear: both;
 }
 
-div {
-	margin-top: 1%;
-}
-
-input[type=text] {
-	width: 150px;
-	padding: 12px 20px;
-	margin: 8px 0;
-	box-sizing: border-box;
-	border: none;
-	background-color: #3CBC8D;
-	color: white;
+input[type=text] {   
+	width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3CBC8D;
+    color: white;
 }
 
 select {
@@ -126,7 +107,7 @@ select {
 #table-wrapper {
 	display: block;
 	overflow-y: auto;
-	height: 500px;
+	height: 50vh;
 	width: 100%;
 	max-width: 700px;
 	margin-left: auto;
@@ -154,5 +135,11 @@ th {
 
 tr:nth-child(even) {
 	background-color: DarkTurquoise;
+}
+
+@media only screen and (max-width: 992px) {
+	body {
+		padding: 1em;
+	}
 }
 
