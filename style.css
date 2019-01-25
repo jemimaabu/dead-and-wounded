@@ -3,6 +3,10 @@ body {
 	padding: 1em 7em;
 }
 
+.github-corner:hover .octo-arm {
+	animation: octocat-wave 560ms ease-in-out
+}
+
 #title {
 	text-transform: capitalize;
 	text-align: center;
@@ -70,10 +74,16 @@ body {
 
 /* For the button that toggles the instructions */
 #instructionsButton {
-	background-color: #f2ff00;
+	background-color: #fff09a;
 	padding: 1em;
 	color: black;
 	border: none;
+	cursor: pointer;
+	transition: .3s;
+}
+
+#instructionsButton:hover {
+	background-color:#f2ff00
 }
 
 /* For the three main columns */
@@ -101,7 +111,7 @@ input[type=text] {
 select {
 	width: 100px;
 	height: 40px;
-	background-color: DodgerBlue;
+	background-color: #9ad9f7;
 }
 
 #table-wrapper {
@@ -141,5 +151,23 @@ tr:nth-child(even) {
 	body {
 		padding: 1em;
 	}
+
+	.github-corner:hover .octo-arm {
+		animation:none
+	}
+	.github-corner .octo-arm {
+		animation:octocat-wave 560ms ease-in-out
+	}
 }
 
+@keyframes octocat-wave {
+	0%, 100% {
+		transform:rotate(0)
+	}
+	20%, 60% {
+		transform:rotate(-25deg)
+	}
+	40%, 80% {
+		transform:rotate(10deg)
+	}
+}
