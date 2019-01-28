@@ -1,58 +1,53 @@
-var win = false;
-var difficulty = +document.getElementById("difficulty-level").value;
+var difficulty = document.getElementById("difficulty-level").value;
 var input = document.getElementById("user-input");
 input.maxLength = difficulty;
-let compInput = [];
+var targetNumber = [];
+
+
+generatetargetNumber();
+
+
 
 // Generate array of 4 unique random numbers
-function generateCompInput() {
-	while (compInput.length < difficulty) {
+function generatetargetNumber() {
+	while (targetNumber.length < difficulty) {
 		const rand = Math.floor(Math.random() * 9);
-		if (compInput.indexOf(rand) === -1) {
-			compInput.push(rand);
-		}
+		if (targetNumber.indexOf(rand) == -1)
+			targetNumber.push(rand);
 	}
 }
-generateCompInput();
 
-//Get difficulty level
+// Change difficulty level
 document.getElementById("difficulty-level").onchange = function () {
-	difficulty = +document.getElementById("difficulty-level").value;
-	document.getElementById("result-body").innerHTML = "";
+	difficulty = document.getElementById("difficulty-level").value;
 	input.maxLength = difficulty;
 	input.value = "";
+	document.getElementById("result-body").innerHTML = "";
 };
 
-function deadAndWounded(compInput, userInput) {
+function countDeadAndWounded(userInput) {
 	const userArray = ("" + userInput).split("");
 	let dead = 0;
 	let wounded = 0;
 
 	for (var i = 0; i < userArray.length; i++) {
-		if (userArray[i] == compInput[i]) {
+		if (userArray[i] == targetNumber[i])
 			dead++;
-		}
-		for (var j = 0; j < userArray.length; j++) {
-			if (i !== j && userArray[i] == compInput[j]) {
+		
+		for (var j = 0; j < userArray.length; j++)
+			if (i !== j && userArray[i] == targetNumber[j])
 				wounded++;
-			}
-		}
 	}
 
-	if (dead === difficulty) {
-		win = true;
-		return "All dead, you win!";
-	}
-
-	return `${dead} dead, ${wounded} wounded`
+	return {dead: dead, wounded: wounded}
 }
 
-function addResultRow(guessText, resultText) {
+function addResultRow(guessNum, resultText) {
 	var tableBody = document.getElementById("result-body")
 	var guessCell = document.createElement("td");
 	var resultCell = document.createElement("td");
 	var newRow = document.createElement("tr");
-	guessCell.innerHTML = guessText;
+	guessCell.innerHTML = guessNum;
 	resultCell.innerHTML = resultText;
 	newRow.append(guessCell);
 	newRow.append(resultCell);
@@ -64,23 +59,30 @@ function guess() {
 	let error = document.getElementById("form-errors");
 
 	error.classList.add("error");
-	if (userInput.length === 0) {
-		error.innerHTML = "Input cannot be empty"
+	if (userInput.length == 0) {
+		error.innerHTML = "Input cannot be empty";
 	} else if (isNaN(userInput)) {
-		error.innerHTML = "Input must be a number"
-	} else if (userInput.length !== difficulty) {
-		error.innerHTML = `Input must be ${difficulty} characters`
+		error.innerHTML = "Input must be a number";
+	} else if (userInput.length != difficulty) {
+		console.log(userInput.length + " " + difficulty);
+		error.innerHTML = "Input must be " + difficulty + " characters";
 	} else if ([...new Set(userInput.split(""))].join("").length !== userInput.length) {
-		document.getElementById("form-errors").innerHTML = "Cannot have duplicate values";
-		return;
+		error.innerHTML = "Cannot have duplicate values";
 	} else {
 		error.classList.remove("error")
 		error.innerHTML = "";
-		if (win) {
-			return;
+		
+		let result = countDeadAndWounded(userInput);
+		
+		if (result.dead == difficulty) {
+			addResultRow(userInput, "All dead, you win!");;
 		} else {
-			addResultRow(userInput, deadAndWounded(compInput, userInput));
+			addResultRow(userInput, "dead: " + result.dead + " | wounded: " + result.wounded);
 		}
+		
+		var element = document.getElementById("scroll-table");
+		element.scrollTop = element.scrollHeight;
+
 	}
 }
 
@@ -94,7 +96,7 @@ document.getElementById("user-input").onkeypress = function (event) {
 
 function toggleInstructions() {
 	var x = document.getElementById("instructions");
-	if (x.style.display === "none") {
+	if (x.style.display == "none") {
 		x.style.display = "block";
 	} else {
 		x.style.display = "none";
