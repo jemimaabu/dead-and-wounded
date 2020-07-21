@@ -33,13 +33,13 @@ function countDeadAndWounded(userInput) {
 	for (var i = 0; i < userArray.length; i++) {
 		if (userArray[i] == targetNumber[i])
 			dead++;
-		
+
 		for (var j = 0; j < userArray.length; j++)
 			if (i !== j && userArray[i] == targetNumber[j])
 				wounded++;
 	}
 
-	return {dead: dead, wounded: wounded}
+	return { dead: dead, wounded: wounded }
 }
 
 function addResultRow(guessNum, resultText) {
@@ -64,22 +64,21 @@ function guess() {
 	} else if (isNaN(userInput)) {
 		error.innerHTML = "Input must be a number";
 	} else if (userInput.length != difficulty) {
-		console.log(userInput.length + " " + difficulty);
 		error.innerHTML = "Input must be " + difficulty + " characters";
 	} else if ([...new Set(userInput.split(""))].join("").length !== userInput.length) {
 		error.innerHTML = "Cannot have duplicate values";
 	} else {
 		error.classList.remove("error")
 		error.innerHTML = "";
-		
+
 		let result = countDeadAndWounded(userInput);
-		
+
 		if (result.dead == difficulty) {
 			addResultRow(userInput, "All dead, you win!");;
 		} else {
 			addResultRow(userInput, "dead: " + result.dead + " | wounded: " + result.wounded);
 		}
-		
+
 		var element = document.getElementById("scroll-table");
 		element.scrollTop = element.scrollHeight;
 
