@@ -3,10 +3,7 @@ var input = document.getElementById("user-input");
 input.maxLength = difficulty;
 var targetNumber = [];
 
-
 generatetargetNumber();
-
-
 
 // Generate array of 4 unique random numbers
 function generatetargetNumber() {

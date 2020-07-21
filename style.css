@@ -4,35 +4,46 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #dedede;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #aeaeae;
+}
+
 .github-corner:hover .octo-arm {
   animation: octocat-wave 560ms ease-in-out;
+}
+
+main {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 #title {
   text-transform: capitalize;
   text-align: center;
-  width: 80%;
-  margin: 0 auto;
 }
 
 #title h2 {
   text-transform: capitalize;
 }
 
-.instructions-container {
-  max-width: 700px;
-  width: 100%;
-  margin: 1em auto;
-}
-
 #instructions h3 {
   margin-bottom: 0;
-}
-
-.media {
-  max-width: 700px;
-  width: 100%;
-  margin: 1em auto;
 }
 
 #form-errors {
@@ -63,15 +74,6 @@ body {
   margin: 1em 0;
 }
 
-#guessButton {
-  background-color: #008cba;
-  padding: 1em;
-  color: white;
-  border: none;
-  cursor: pointer;
-  min-width: 25%;
-}
-
 /* For the button that toggles the instructions */
 #instructionsButton {
   background-color: #ffeb68;
@@ -99,11 +101,23 @@ body {
   clear: both;
 }
 
-input[type="text"] {
+.input-container {
+  margin: 1em 0;
+}
+
+#user-input {
   width: 100%;
   padding: 1em;
   box-sizing: border-box;
-  border: 1px solid #3cbc8d;
+  border: 1px solid;
+}
+
+#guess-button {
+  background-color: #008cba;
+  padding: 1em;
+  color: white;
+  border: 1px solid #008cba;
+  min-width: 25%;
 }
 
 select {
@@ -116,41 +130,36 @@ option {
   background-color: white;
 }
 
-#table-wrapper {
-  width: 100%;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 #scroll-table {
   display: block;
-  overflow-y: auto;
-  height: 50vh;
+  overflow-y: overlay;
+  height: 45vh;
   width: 100%;
 }
 
 table {
-  background-color: Aquamarine;
+  background-color: white;
+  border: 1px solid #3cbc8d;
   border-collapse: collapse;
   table-layout: fixed;
   width: 100%;
 }
 
+tr {
+  border: 1px solid #3cbc8d;
+}
+
 td,
 th {
-  border: 1px solid #dddddd;
+  border: 1px solid #3cbc8d;
   text-align: left;
   padding: 5px;
 }
 
 th {
-  background-color: #4caf50;
+  background-color: #3cbc8d;
+  border: 1px solid #eaeaea;
   color: white;
-}
-
-tr:nth-child(even) {
-  background-color: DarkTurquoise;
 }
 
 @media only screen and (max-width: 992px) {
@@ -163,6 +172,13 @@ tr:nth-child(even) {
   }
   .github-corner .octo-arm {
     animation: octocat-wave 560ms ease-in-out;
+  }
+
+  .column:first-of-type {
+    width: 75%;
+  }
+  .column:nth-of-type(2) {
+    width: 25%;
   }
 }
 
